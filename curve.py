@@ -1,17 +1,20 @@
 import turtle
 
 
+# Aplhabet: A, B
 # F: forward
 # +: right turn
 # -: left turn
+# 2d
+# A -> -BF+AFA+FB-
+# B -> +AF-BFB-FA+
 
-# Coch snowflake
-# axiom = "F--F--F"
-# rules = {"F":"F+F--F+F"}
-# iterations = 4
-# angle = 60
+def system(iters, axiom, rules):
+    if iters == 0: 
+        return axiom
+    return create_l_system(iters-1, "".join(rules[i] if i in rules else i for i in axiom), rules)
 
-def draw_l_system(instructions, angle, distance):
+def draw(instructions, angle, distance):
     for command in instructions:
         if command == 'F': 
             turtle.forward(distance)
@@ -20,21 +23,16 @@ def draw_l_system(instructions, angle, distance):
         elif command == '-': 
             turtle.left(angle)
 
-def create_l_system(iters, axiom, rules):
-    if iters == 0: 
-        return axiom
-    return create_l_system(iters-1, "".join(rules[i] if i in rules else i for i in axiom), rules)
-
-def main(iterations, axiom, rules, angle, length=8):
+def main(iterations, axiom, rules, angle, length=10):
     turtle.speed(100)
-    inst = create_l_system(iterations, axiom, rules)
-    draw_l_system(inst, angle, length)
+    inst = system(iterations, axiom, rules)
+    draw(inst, angle, length)
     turtle.hideturtle()
     turtle.exitonclick()
 
-axiom = "F--F--F"
-rules = {"F":"F+F--F+F"}
-iterations = 2
-angle = 60
+axiom = "A"
+rules = {"A":"-BF+AFA+FB-", "B":"+AF-BFB-FA+"}
+iterations = 3
+angle = 90
 
 main(iterations, axiom, rules, angle)
