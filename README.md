@@ -7,8 +7,8 @@
 <p><code>2d</code></p>
 <p><code>A -> -BF+AFA+FB-</code></p>
 <p><code>B -> +AF-BFB-FA+</code></p>
-<p><img src='image/hilbert_2d.png'></p>
+![Optional Text](../main/image/hilbert_2d.png')
 <p><h4>Hilbert curve in three-dimensional space</h4></p>
 <p>To construct the Hilbert curve in a three-dimensional space, the Gray code was used</p>
-<p><img src='image/hilbert_3d.png'></p>
+![Optional Text](../main/image/hilbert_3d.png')
 <p>Also referred to the code attached by the link -> https://stackoverflow.com/questions/499166/mapping-n-dimensional-value-to-a-point-on-hilbert-curve</p>
