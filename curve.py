@@ -12,7 +12,7 @@ import turtle
 def system(iters, axiom, rules):
     if iters == 0: 
         return axiom
-    return create_l_system(iters-1, "".join(rules[i] if i in rules else i for i in axiom), rules)
+    return system(iters-1, "".join(rules[i] if i in rules else i for i in axiom), rules)
 
 def draw(instructions, angle, distance):
     for command in instructions:
@@ -32,7 +32,7 @@ def main(iterations, axiom, rules, angle, length=10):
 
 axiom = "A"
 rules = {"A":"-BF+AFA+FB-", "B":"+AF-BFB-FA+"}
-iterations = 3
+iterations = 4
 angle = 90
 
 main(iterations, axiom, rules, angle)

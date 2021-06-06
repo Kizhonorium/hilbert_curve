@@ -40,7 +40,6 @@ def hilbert_point(distance: int):
     return x
 
 def hilbert_points(distances: int):
-    ''''''
     return list(map(hilbert_point, distances))
 
 points = hilbert_points(list(range(512)))
